@@ -116,18 +116,12 @@ function (global, factory) {
     $.fn.emulateTransitionEnd = transitionEndEmulator;
     $.event.special[Util.TRANSITION_END] = getSpecialTransitionEndEvent();
   }
-  /**
-   * --------------------------------------------------------------------------
-   * Public Util Api
-   * --------------------------------------------------------------------------
-   */
 
 
   var Util = {
     TRANSITION_END: 'bsTransitionEnd',
     getUID: function getUID(prefix) {
-      do {
-        // eslint-disable-next-line no-bitwise
+      do 
         prefix += ~~(Math.random() * MAX_UID); // "~~" acts like a faster Math.floor() here
       } while (document.getElementById(prefix));
 
@@ -196,7 +190,7 @@ function (global, factory) {
     findShadowRoot: function findShadowRoot(element) {
       if (!document.documentElement.attachShadow) {
         return null;
-      } // Can find the shadow root otherwise it'll return the document
+      }
 
 
       if (typeof element.getRootNode === 'function') {
@@ -206,7 +200,7 @@ function (global, factory) {
 
       if (element instanceof ShadowRoot) {
         return element;
-      } // when we don't find a shadow root
+      }
 
 
       if (!element.parentNode) {
@@ -217,12 +211,6 @@ function (global, factory) {
     }
   };
   setTransitionEndSupport();
-
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
 
   var NAME = 'alert';
   var VERSION = '4.3.1';
@@ -242,16 +230,10 @@ function (global, factory) {
     ALERT: 'alert',
     FADE: 'fade',
     SHOW: 'show'
-    /**
-     * ------------------------------------------------------------------------
-     * Class Definition
-     * ------------------------------------------------------------------------
-     */
 
   };
 
   var Alert =
-  /*#__PURE__*/
   function () {
     function Alert(element) {
       this._element = element;
@@ -280,7 +262,7 @@ function (global, factory) {
     _proto.dispose = function dispose() {
       $.removeData(this._element, DATA_KEY);
       this._element = null;
-    } // Private
+    }
     ;
 
     _proto._getRootElement = function _getRootElement(element) {
@@ -361,19 +343,10 @@ function (global, factory) {
 
     return Alert;
   }();
-  /**
-   * ------------------------------------------------------------------------
-   * Data Api implementation
-   * ------------------------------------------------------------------------
-   */
 
 
   $(document).on(Event.CLICK_DATA_API, Selector.DISMISS, Alert._handleDismiss(new Alert()));
-  /**
-   * ------------------------------------------------------------------------
-   * jQuery
-   * ------------------------------------------------------------------------
-   */
+ 
 
   $.fn[NAME] = Alert._jQueryInterface;
   $.fn[NAME].Constructor = Alert;
@@ -382,12 +355,6 @@ function (global, factory) {
     $.fn[NAME] = JQUERY_NO_CONFLICT;
     return Alert._jQueryInterface;
   };
-
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
 
   var NAME$1 = 'button';
   var VERSION$1 = '4.3.1';
@@ -410,11 +377,7 @@ function (global, factory) {
   var Event$1 = {
     CLICK_DATA_API: "click" + EVENT_KEY$1 + DATA_API_KEY$1,
     FOCUS_BLUR_DATA_API: "focus" + EVENT_KEY$1 + DATA_API_KEY$1 + " " + ("blur" + EVENT_KEY$1 + DATA_API_KEY$1)
-    /**
-     * ------------------------------------------------------------------------
-     * Class Definition
-     * ------------------------------------------------------------------------
-     */
+  
 
   };
 
