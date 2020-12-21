@@ -16,9 +16,10 @@ This project is a web application for Delani studio that shows details about the
 
 # Technologies used 
 * HTML 
-* CSS J
+* CSS 
 * Javascript 
 * Bootstrap
+* JS
 
 ***
 
